@@ -4,4 +4,5 @@ export class Country {
     continent: string;
     population: string;
     area: string;
+    flagUrl: string;
 }

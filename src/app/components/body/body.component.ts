@@ -10,16 +10,15 @@ import { DataService } from '../data.service';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-  @Input()reason: Number;
+/*   @Input()reason: Number;
   dataSource = new MatTableDataSource<Country>();
-  displayedColumns: string[] = ['country', 'capital', 'continent', 'population', 'area'];
-  //, 'flagUrl'
+  displayedColumns: string[] = ['country', 'capital', 'continent', 'population', 'area', 'flagUrl'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  url = 'get_all_countries';
+  url = 'get_all_countries'; */
 
   constructor(private httpService: HttpService, private data: DataService) { }
-
-  ngOnInit() {
+  ngOnInit() {}
+ /*  ngOnInit() {
     this.data.currentMessage.subscribe(message => {
       if (message !== '') {
       this.url = message;
@@ -38,7 +37,7 @@ export class BodyComponent implements OnInit {
   showCoutries(url: string) {
     this.httpService.getData(url).subscribe((data: Country[]) => this.dataSource = new MatTableDataSource(data));
     setTimeout(() => this.dataSource.paginator = this.paginator);
-  }
+  } */
 
 }
 

@@ -8,11 +8,17 @@ import { MaterialModule } from './material.module';
 import { MainRoutes } from '../components/routing';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RandomCountryComponent } from '../components/random-country/random-country.component';
+import { MostPopulatedComponent } from '../components/most-populated/most-populated.component';
+import { AllCountriesComponent } from '../components/all-countries/all-countries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BodyComponent
+    BodyComponent,
+    RandomCountryComponent,
+    MostPopulatedComponent,
+    AllCountriesComponent
   ],
   imports: [
     BrowserModule,
