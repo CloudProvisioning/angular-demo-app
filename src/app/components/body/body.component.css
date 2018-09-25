@@ -1,6 +1,10 @@
-p{
+p {
   text-align: center;
   font-size: 50px;
+}
+
+div {
+  padding-top: 80px;
 }
 
 div > {

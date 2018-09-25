@@ -10,19 +10,18 @@ import { Country } from '../../models/county';
 })
 export class RandomCountryComponent implements OnInit {
 
-  dataSource = new MatTableDataSource<Country>();
-  displayedColumns: string[] = ['country', 'flagUrl'];
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  private country: Country = new Country();
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getData('get_flag_of_random_country').subscribe((data: Country[]) => this.dataSource = new MatTableDataSource(data));
-    setTimeout(() => this.dataSource.paginator = this.paginator);
+    this.showNextCountry();
   }
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
+  showNextCountry() {
+    this.httpService.getData('get_flag_of_random_country')
+    .subscribe((data: Country) => {
+      this.country = data;
+    });
   }
 }
